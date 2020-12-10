@@ -5,6 +5,24 @@
         </title>
     </head>
     <body>
-        Template Engine is set up!!
+        <h1>My Contacts List</h1>
+        <div>
+            <ul>
+                <% for(let p of contacts_list) { %>
+                    <li>
+                        <p> <%= p.name %> </p>
+                        <p> <%= p.phone %> </p>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+
+        <form action="/create-contact" method="POST">
+
+            <input type="text" name="name" placeholder="Enter name">
+            <input type="number" name="phone" placeholder="Enter phone">
+            <button type="submit"> Add Contact </button>
+        </form>
+
     </body>
 </html>
