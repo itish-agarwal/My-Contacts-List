@@ -3,6 +3,11 @@ body {
     font-family: sans-serif;
 }
 
+.phone-and-delete-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
 #page-heading {
     font-size: 3rem;
     margin-top: 32px;
@@ -59,7 +64,7 @@ span {
     border-radius: 1px;
 }
 
-#submitBtn {
+#submit-btn {
     box-sizing: content-box;
     cursor: pointer;
     border: 0.3px solid grey;
@@ -69,10 +74,29 @@ span {
     transition: ease-in-out 0.1s;
 }
 
-#submitBtn:hover {
+#submit-btn:hover {
     background-color: blue;
     border:1px #D7D7D7 solid;
     color:white;
     border:1px solid blue;
     box-shadow: 1px 2px 3px lightgrey;
+}
+
+.delete-btn {
+    margin-left: 6px;
+    margin-top: 2.4px;
+}
+
+#delete-btn-icon {
+    /* color: rgb(39, 3, 3);
+     */
+    color: rgb(80, 77, 77);
+    transition: ease-in-out 0.1s;
+    box-sizing: border-box;
+}
+
+#delete-btn-icon:hover {
+    /* color: rgb(214, 0, 0); */
+    color: black;
+    transform: scale(1.09);
 }

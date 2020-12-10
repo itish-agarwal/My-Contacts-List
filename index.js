@@ -76,6 +76,37 @@ app.post('/create-contact', function(req, res) {
 
 });
 
+
+//delete a contact -> 
+
+//1. this is for string params (for eg, /delete-contact/2344343343);
+// app.get('/delete-contact/:phone', function(req, res) 
+//     console.log(req.params);
+//     let phone = req.params.phone;
+//
+
+
+//2. using query params (for eg, /delete-contact/?phone=2344343343);
+
+app.get('/delete-contact', function(req, res) {
+    // console.log(req.query);
+
+    let phone = req.query.phone;
+
+    let contactIndex = contactList.findIndex(contact => contact.phone == phone);
+
+    if(contactIndex != -1) {
+        contactList.splice(contactIndex, 1);
+    }
+    return res.redirect('back');
+});
+
+
+
+
+
+
+
 app.listen(port, function(err) {
     if(err) {
         console.log("Error");

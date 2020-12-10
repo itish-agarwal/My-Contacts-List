@@ -17,8 +17,16 @@
                 <% for(let p of contacts_list) { %>
                     <div class = "contact">
                         <span class = "name"> <%= p.name %> </span>
-                        <span class = "phone"> <%= p.phone %> </span>
+                        <div class = "phone-and-delete-btn">
+                            <span class = "phone"> <%= p.phone %> </span>
+                            <div class = "delete-btn">
+                                <a href="/delete-contact/?phone=<%=p.phone%>&name=<%=p.name%>">
+                                    <i id="delete-btn-icon" class="fas fa-window-close"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
+                    
                 <% } %>
             </ul>
         </div>
@@ -27,7 +35,7 @@
 
             <input class="input-i" type="text" name="name" placeholder="Enter name" required>
             <input class="input-i" type="number" name="phone" placeholder="Enter phone" required>
-            <button id="submitBtn" type="submit"> Add Contact </button>
+            <button id="submit-btn" type="submit"> Add Contact </button>
         </form>
 
         <script type="text/javascript" src="/js/home.js"></script>
