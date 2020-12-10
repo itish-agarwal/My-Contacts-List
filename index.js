@@ -9,7 +9,27 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 //middleware - parse -> to decode the data from the form
-app.use(express.urlencoded());
+app.use(express.urlencoded()); //also a middleware
+
+//access static files
+app.use(express.static('assets'));
+
+
+//middleware is basically a function that can access both request side and the response side
+
+// //Custom middlewares
+// //middleware 1
+// app.use(function(req, res, next) {
+//     console.log("M1 called");
+//     next();
+// });
+
+// //middleware 2
+// app.use(function(req, res, next) {
+//     console.log("M2 called");
+//     next();
+// });
+
 
 var contactList = [
     {
@@ -50,7 +70,9 @@ app.post('/create-contact', function(req, res) {
     // console.log(req.body);
 
     contactList.push(req.body);
-    return res.redirect('/');
+
+    //if we do not want to remember where we came from and just want to go back, use 'back';
+    return res.redirect('back');
 
 });
 
