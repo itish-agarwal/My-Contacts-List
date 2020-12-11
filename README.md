@@ -3,6 +3,7 @@
 This is a basic contacts list that runs on your local server and stores the data into the database
 
 # Requirements
+Make sure the following are installed on your system:
 * Nodejs
 * MongoDB 
 
