@@ -3,7 +3,9 @@ const path = require('path');
 const port = 8000;
 
 //require database
-const db = require('./config/mongoose.js');
+const db = require('./config/mongoose');
+
+const Contact = require('./models/contact');
 
 const app = express();
 
@@ -13,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 //middleware - parse -> to decode the data from the form
 app.use(express.urlencoded()); //also a middleware
-
+ 
 //access static files
 app.use(express.static('assets'));
 
@@ -46,14 +48,21 @@ var contactList = [
     }, 
     {
         name: "Dog",
-        phone: "3432546436"
+        phone: "3325464369"
     }
 ];
 
 app.get('/', function(req, res) {
-    return res.render('home', {
-        title: "My Contacts List",
-        contacts_list: contactList
+    //find all contacts
+    Contact.find({}, function(err, contacts) {
+        if(err) {
+            console.log("Error in fetching contacts from db");
+            return;
+        }
+        return res.render('home', {
+            title: "My Contacts List", 
+            contacts_list: contacts
+        });
     });
 });
 
@@ -73,11 +82,21 @@ app.post('/create-contact', function(req, res) {
     //this parser creates a property of the object 'req' as 'body' and puts the data as properties of 'body'
     // console.log(req.body);
 
-    contactList.push(req.body);
+    // contactList.push(req.body);
 
-    //if we do not want to remember where we came from and just want to go back, use 'back';
-    return res.redirect('back');
+    //push into the database now
 
+    Contact.create({
+        name: req.body.name,
+        phone: req.body.phone
+    }, function(err, newContact) {
+        if(err) {
+            console.log("Error in creating a contact");
+            return;
+        }
+        // console.log("************", newContact);
+        return res.redirect('back');
+    });
 });
 
 
