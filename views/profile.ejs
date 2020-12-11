@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>
+            <%= p.name %>
+        </title>
+        <script src="https://kit.fontawesome.com/ef7b48db01.js" crossorigin="anonymous"></script>
+        <link rel = "stylesheet" href = "/css/profile.css">
+    </head>
+    <body>
+
+        <main>
+            <div id = "name-container">
+                <span id = "name-div">
+                    <%= p.name %>
+                </span>
+            </div>
+            <div class="container" id="phone-container">
+                <div id = "phone-icon-div">
+                    <i class = "fas fa-phone-square-alt">
+
+                    </i>
+                    <span id="phone"> Phone </span>
+                </div>
+                <div id = "phone-number-div">
+                    <span id="phone-number">
+                        <%= p.phone %>
+                    </span>
+                </div>
+            </div>
+
+            <div class="container" id="email-container">
+                <div id = "email-icon-div">
+                    <i class = "fas fa-envelope">
+
+                    </i>
+                    <span id="email"> Email </span>
+                </div>
+                <div id="email-div">
+                    <span id="email-id">
+                    </span>
+                </div>
+            </div>
+
+            <div class="container" id="address-container">
+                <div id = "address-icon-div">
+                    <i class = "fas fa-map-marker-alt">
+
+                    </i>
+                    <span id = "address"> Address </span>
+                </div>
+                <div id = "address-div">
+                    <span id = "address-id">
+
+                    </span>
+                </div>
+            </div>
+            
+
+        </main>
+
+        <aside>
+
+
+        </aside>
+        
+    </body>
+</html>

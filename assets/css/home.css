@@ -34,12 +34,33 @@ body {
     /* background-color: blue; */
     /* background-image: linear-gradient(45deg, #8E0E00, #1F1C18); */
     background-image: linear-gradient(45deg, #7b4397, #dc2430);
-    color: white;
+    /* color: white; */
     transition: ease-in-out 0.1s;
 }
 
+.name {
+    color:black;
+    box-sizing: border-box;
+    transition: ease-in-out 0.1s;
+}
+
+.name:hover {
+    transform: scale(1.03);
+}
+
+#one-contact {
+    display: inline-block;
+    /* color: white; */
+}   
+
+
+#one-contact:hover {
+    cursor: pointer;
+    /* color:black; */
+}
+
 .contact:hover {
-    cursor:pointer;
+    /* cursor:pointer; */
     background-image: linear-gradient(-45deg, #abbaab, #ffffff);
     color:black;
     border: 1px solid rgb(236, 234, 234);

@@ -72,6 +72,26 @@ app.get('/practise', function(req, res) {
     });
 });
 
+
+//make profile page
+app.get('/profile-page/', function(req, res) {
+
+    let id = req.query.id;
+    Contact.findOne({_id: id}, function(err, person) {
+        if(err) {
+            console.log("Error in finding such a contact");
+            return;
+        }
+        return res.render('profile', {
+            p : person
+        });
+    });
+
+});
+
+
+
+
 //get form data
 app.post('/create-contact', function(req, res) {
     

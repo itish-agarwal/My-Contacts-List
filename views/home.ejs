@@ -15,8 +15,11 @@
         <div id="container">
             <ul>
                 <% for(let p of contacts_list) { %>
+                    
                     <div class = "contact">
-                        <span class = "name"> <%= p.name %> </span>
+                        <a id = "one-contact" href = "/profile-page/?id=<%=p._id%>">
+                            <span class = "name"> <%= p.name %> </span>
+                        </a>
                         <div class = "phone-and-delete-btn">
                             <span class = "phone"> <%= p.phone %> </span>
                             <div class = "delete-btn">
@@ -26,7 +29,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 <% } %>
             </ul>
         </div>
