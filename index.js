@@ -114,20 +114,29 @@ app.post('/create-contact', function(req, res) {
 app.get('/delete-contact', function(req, res) {
     // console.log(req.query);
 
-    let phone = req.query.phone;
+    // let phone = req.query.phone;
 
-    let contactIndex = contactList.findIndex(contact => contact.phone == phone);
+    // let contactIndex = contactList.findIndex(contact => contact.phone == phone);
 
-    if(contactIndex != -1) {
-        contactList.splice(contactIndex, 1);
-    }
-    return res.redirect('back');
+    // if(contactIndex != -1) {
+    //     contactList.splice(contactIndex, 1);
+    // }
+    // return res.redirect('back');
+
+
+
+    //to delete from the database, use _id
+    let id = req.query.id;
+
+    //find contact in the database using id and delete it
+    Contact.findByIdAndDelete(id, function(err) {
+        if(err) {
+            console.log("Error in deleting a contact");
+            return;
+        }
+        return res.redirect('back');
+    });    
 });
-
-
-
-
-
 
 
 app.listen(port, function(err) {
