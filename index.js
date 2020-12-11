@@ -2,6 +2,9 @@ const express = require('express');
 const path = require('path');
 const port = 8000;
 
+//require database
+const db = require('./config/mongoose.js');
+
 const app = express();
 
 //tell express that ejs will be our view engine
@@ -13,6 +16,7 @@ app.use(express.urlencoded()); //also a middleware
 
 //access static files
 app.use(express.static('assets'));
+
 
 
 //middleware is basically a function that can access both request side and the response side
