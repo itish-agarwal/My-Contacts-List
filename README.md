@@ -1,9 +1,14 @@
 # My-Contacts-List
 
-This is a basic contacts list that runs on your local server
+This is a basic contacts list that runs on your local server and stores the data into the database
+
+# Requirements
+* Nodejs
+* MongoDB 
 
 ## How to use?
-* Make sure you have Nodejs installed on your system. You can check if it is installed with the command `node -v`
+* Make sure MongoDB server is running. You can check if the server is running with the command `sudo systemctl status mongod`
+* If MongoDB server is not running, run it using the command `sudo systemctl start mongod`
 * Clone the repository using the command `git clone https://github.com/itish-agarwal/My-Contacts-List.git`
 * Change directory using `cd My-Contacts-List`
 * Install required node dependencies using `npm install`
