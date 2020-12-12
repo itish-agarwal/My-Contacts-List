@@ -119,6 +119,32 @@ app.post('/create-contact', function(req, res) {
     });
 });
 
+//add email
+app.post('/add-email', function(req, res) {
+    
+    let email = req.body.email;
+    let id = req.query.id;
+
+    Contact.findByIdAndUpdate(id, {email: email}, function(err, person) {
+        if(err) {
+            console.log("Error in finding the contact");
+            return;
+        }        
+        return res.redirect('back');
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 //delete a contact -> 
 

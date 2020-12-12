@@ -10,6 +10,23 @@ main {
     padding: 4rem 0px;
 }
 
+#back-div {
+    position: absolute;
+    left: 2%;
+    top: 3%;
+}
+
+#back-arrow {
+    font-size: 2rem;
+    color:white;
+    transition: ease-in-out 0.1s;
+}
+
+#back-arrow:hover {
+   color: lightgrey;
+   transform: scale(1.2);
+}
+
 #name-container {
     width: 60%;
     text-align: center;
@@ -49,4 +66,44 @@ main {
 #address-icon-div {
     color:white;
     font-size: 1.6rem;
+}
+
+#email-form {
+    margin-top: 0rem;
+}
+
+#email-input {
+    /* margin-left:2rem; */
+    width: 18rem;
+    border:none;
+    outline: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    font-size: 1.1rem;
+    padding: 1px 5px;
+    color:white;
+}
+
+#email-id {
+    display: inline-block;
+    font-size:1.5rem;
+    color:white;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+}
+
+#submit-btn {
+    box-sizing: content-box;
+    cursor: pointer;
+    border: 0.5px solid grey;
+    outline:none;
+    border-radius: 1px;
+    font-size:1rem;
+    padding: 2px 4px 2px 4px;
+    transition: ease-in-out 0.2s;
+    border-radius: 3px;
+}
+
+#submit-btn:hover {
+    box-shadow: 1px 1px 5px white;
 }

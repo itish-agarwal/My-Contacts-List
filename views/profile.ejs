@@ -9,6 +9,13 @@
     <body>
 
         <main>
+            <div id = "back-div">
+                <a href = "/">
+                    <i id="back-arrow" class = "fas fa-arrow-alt-circle-left">
+                        
+                    </i>
+                </a>
+            </div>
             <div id = "name-container">
                 <span id = "name-div">
                     <%= p.name %>
@@ -37,6 +44,14 @@
                 </div>
                 <div id="email-div">
                     <span id="email-id">
+                        <% if(typeof(p.email) == 'undefined') { %>
+                            <form id="email-form" action="/add-email/?id=<%=p._id%>" method="POST">
+                                <input id="email-input" type="email" name="email" placeholder="Add email">
+                                <button id="submit-btn" type="submit"> Add email </button>
+                            </form>
+                        <% } else { %>
+                            <%= p.email %>
+                        <% } %>
                     </span>
                 </div>
             </div>
