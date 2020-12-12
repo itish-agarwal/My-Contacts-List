@@ -108,7 +108,9 @@ app.post('/create-contact', function(req, res) {
 
     Contact.create({
         name: req.body.name,
-        phone: req.body.phone
+        phone: req.body.phone,
+        email: "-1",
+        address: "-1"
     }, function(err, newContact) {
         if(err) {
             console.log("Error in creating a contact");
@@ -118,6 +120,50 @@ app.post('/create-contact', function(req, res) {
         return res.redirect('back');
     });
 });
+
+
+
+
+//edit phone
+app.get('/edit-phone', function(req, res) {
+    let id = req.query.id;
+    Contact.findByIdAndUpdate(id, {phone: "-1"}, function(err, person) {
+        if(err) {
+            console.log("Error in editing phone");
+            return;
+        }
+        return res.redirect('back');
+    });
+});
+
+//add phone
+app.post('/add-phone', function(req, res) {
+    let id = req.query.id;
+    let phone = req.body.phone;
+    Contact.findByIdAndUpdate(id, {phone: phone}, function(err, person) {
+        if(err) {
+            console.log("Error in editing phone");
+            return;
+        }
+        return res.redirect('back');
+    });
+});
+
+
+//edit email
+app.get('/edit-email', function(req, res) {
+
+    let id = req.query.id;
+    
+    Contact.findByIdAndUpdate(id, {email: "-1"}, function(err, person) {
+        if(err) {
+            console.log("Error in editing email");
+            return;
+        }
+    });
+    return res.redirect('back');    
+});
+
 
 //add email
 app.post('/add-email', function(req, res) {
@@ -134,6 +180,23 @@ app.post('/add-email', function(req, res) {
     });
 });
 
+
+
+
+//edit address 
+app.get('/edit-address', function(req, res) {
+    
+    let id = req.query.id;
+    Contact.findByIdAndUpdate(id, {address: "-1"}, function(err, person) {
+        if(err) {
+            console.log("Error in editing address");
+            return;
+        }
+    });
+    return res.redirect('back');
+});
+
+
 //add address
 
 app.post('/add-address', function(req, res) {
@@ -147,7 +210,6 @@ app.post('/add-address', function(req, res) {
         return res.redirect('back');
     });
 });
-
 
 
 

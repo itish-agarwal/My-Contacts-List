@@ -108,6 +108,7 @@ main {
     padding: 2px 4px 2px 4px;
     transition: ease-in-out 0.2s;
     border-radius: 2px;
+    margin-left: 0.4rem;
 }
 
 #submit-btn1:hover {
@@ -129,9 +130,90 @@ main {
 
 #address-id {
     display: inline-block;
+    overflow-y: auto;
+    width: 30rem;
     font-size:1.27rem;
     font-weight: bold;
     color:white;
-    margin-left: 1.55rem;
+    margin-left: 1.58rem;
     margin-top: 0.5rem;
+}
+
+#submit-btn2 {
+    box-sizing: content-box;
+    cursor: pointer;
+    border: 0.5px solid grey;
+    outline:none;
+    border-radius: 1px;
+    font-size:1rem;
+    padding: 2px 4px 2px 4px;
+    transition: ease-in-out 0.2s;
+    border-radius: 2px;
+    margin-left: 0.65rem;
+}
+
+#submit-btn2:hover {
+    box-shadow: 1px 1px 5px white;
+}
+
+
+#phone-input {
+    /* margin-left:2rem; */
+    font-family: monospace;
+    width: 20rem;
+    border:none;
+    outline: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    font-size: 1.2rem;
+    padding: 1px 5px;
+    color:white;
+}
+
+#phone-number {
+    display: inline-block;
+    font-size:1.40rem;
+    font-weight: bold;
+    color:white;
+    margin-top: 0.5rem;
+}
+
+#submit-btn3 {
+    box-sizing: content-box;
+    cursor: pointer;
+    border: 0.5px solid grey;
+    outline:none;
+    border-radius: 1px;
+    font-size:1rem;
+    padding: 2px 4px 2px 4px;
+    transition: ease-in-out 0.2s;
+    border-radius: 2px;
+    margin-left: 0.6rem;
+}
+
+#submit-btn3:hover {
+    box-shadow: 1px 1px 5px white;
+}
+
+
+
+/*edit buttons*/
+.edit-tags {
+    position: relative;
+    margin-left:58%;
+}
+
+.edit {
+    color:white;
+    font-size: 1.1rem;
+    transition: ease-in-out 0.04s;
+}
+
+.edit:hover {
+    color: lightgrey;
+    transform: scale(1.16);
+}
+
+#address-edit-a {
+    margin-left:52.6%;
 }

@@ -21,19 +21,36 @@
                     <%= p.name %>
                 </span>
             </div>
+            
             <div class="container" id="phone-container">
                 <div id = "phone-icon-div">
                     <i class = "fas fa-phone-square-alt">
 
                     </i>
                     <span id="phone"> Phone </span>
+                    <% if(!(p.phone == "-1")) { %>
+                        <a class = "edit-tags" id="phone-edit-a" href = "/edit-phone/?id=<%=p.id%>">
+                            <i class = "edit fas fa-pencil-alt">
+                                
+                            </i>
+                        </a>
+                    <% } %>
                 </div>
                 <div id = "phone-number-div">
                     <span id="phone-number">
-                        <%= p.phone %>
+                        <% if(p.phone == "-1") { %>
+                            <form id="phone-form" action="/add-phone/?id=<%=p._id%>" method="POST">
+                                <input id="phone-input" type="text" name="phone" placeholder="Add phone" required>
+                                <button id="submit-btn3" type="submit"> Save </button>
+                            </form>
+                        <% } else { %>
+                            <%= p.phone %>
+                        <% } %>
                     </span>
                 </div>
             </div>
+
+
 
             <div class="container" id="email-container">
                 <div id = "email-icon-div">
@@ -41,13 +58,20 @@
 
                     </i>
                     <span id="email"> Email </span>
+                    <% if(!(p.email == "-1")) { %>
+                        <a class = "edit-tags" id="email-edit-a" href = "/edit-email/?id=<%=p.id%>">
+                            <i class = "edit fas fa-pencil-alt">
+                                
+                            </i>
+                        </a>
+                    <% } %>
                 </div>
                 <div id="email-div">
                     <span id="email-id">
-                        <% if(typeof(p.email) == 'undefined') { %>
+                        <% if(p.email == "-1") { %>
                             <form id="email-form" action="/add-email/?id=<%=p._id%>" method="POST">
                                 <input id="email-input" type="email" name="email" placeholder="Add email" required>
-                                <button id="submit-btn1" type="submit"> Add email </button>
+                                <button id="submit-btn1" type="submit"> Save </button>
                             </form>
                         <% } else { %>
                             <%= p.email %>
@@ -62,13 +86,20 @@
 
                     </i>
                     <span id = "address"> Address </span>
+                    <% if(!(p.address == "-1")) { %> 
+                        <a class = "edit-tags" id="address-edit-a" href = "/edit-address/?id=<%=p.id%>">
+                            <i class = "edit fas fa-pencil-alt">
+                                
+                            </i>
+                        </a>
+                    <% } %>
                 </div>
                 <div id = "address-div">
                     <span id = "address-id">
-                        <% if(typeof(p.address) == 'undefined') { %>
+                        <% if(p.address == "-1") { %>
                             <form id="address-form" action="/add-address/?id=<%=p._id%>" method="POST">
-                                <textarea rows="2" id="address-input" type="text" name="address" placeholder="Add address"></textarea>
-                                <button id="submit-btn2" type="submit"> Add address </button>
+                                <textarea rows="2" id="address-input" type="text" name="address" placeholder="Add address" required></textarea>
+                                <button id="submit-btn2" type="submit"> Save </button>
                             </form>
                         <% } else { %>
                             <%= p.address %>

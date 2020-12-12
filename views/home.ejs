@@ -21,7 +21,13 @@
                             <span class = "name"> <%= p.name %> </span>
                         </a>
                         <div class = "phone-and-delete-btn">
-                            <span class = "phone"> <%= p.phone %> </span>
+                            <span class = "phone">
+                                <% if(p.phone=="-1") { %>
+                                    Not saved
+                                <% } else { %>
+                                    <%= p.phone %>
+                                <% } %>
+                            </span>
                             <div class = "delete-btn">
                                 <a href="/delete-contact/?id=<%=p._id%>">
                                     <i id="delete-btn-icon" class="fas fa-window-close"></i>
