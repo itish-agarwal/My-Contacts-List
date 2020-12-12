@@ -13,5 +13,5 @@ Make sure the following are installed on your system:
 * Clone the repository using the command `git clone https://github.com/itish-agarwal/My-Contacts-List.git`
 * Change directory using `cd My-Contacts-List`
 * Install required node dependencies using `npm install`
-* Fire up the server using `nodemon index.js`
+* Fire up the server using `npm start`
 * This will run the server on port 8000. Visit 127.0.0.1:8000 to check out your contacts list
