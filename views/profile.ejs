@@ -46,8 +46,8 @@
                     <span id="email-id">
                         <% if(typeof(p.email) == 'undefined') { %>
                             <form id="email-form" action="/add-email/?id=<%=p._id%>" method="POST">
-                                <input id="email-input" type="email" name="email" placeholder="Add email">
-                                <button id="submit-btn" type="submit"> Add email </button>
+                                <input id="email-input" type="email" name="email" placeholder="Add email" required>
+                                <button id="submit-btn1" type="submit"> Add email </button>
                             </form>
                         <% } else { %>
                             <%= p.email %>
@@ -65,6 +65,14 @@
                 </div>
                 <div id = "address-div">
                     <span id = "address-id">
+                        <% if(typeof(p.address) == 'undefined') { %>
+                            <form id="address-form" action="/add-address/?id=<%=p._id%>" method="POST">
+                                <textarea rows="2" id="address-input" type="text" name="address" placeholder="Add address"></textarea>
+                                <button id="submit-btn2" type="submit"> Add address </button>
+                            </form>
+                        <% } else { %>
+                            <%= p.address %>
+                        <% } %>
 
                     </span>
                 </div>

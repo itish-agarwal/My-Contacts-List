@@ -68,31 +68,37 @@ main {
     font-size: 1.6rem;
 }
 
+#address {
+    margin-left: 0.08rem;
+}
+
 #email-form {
     margin-top: 0rem;
 }
 
 #email-input {
     /* margin-left:2rem; */
-    width: 18rem;
+    font-family: monospace;
+    width: 20rem;
     border:none;
     outline: none;
     border-bottom: 1px solid white;
     background-color: transparent;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding: 1px 5px;
     color:white;
 }
 
 #email-id {
     display: inline-block;
-    font-size:1.5rem;
+    font-size:1.40rem;
+    font-weight: bold;
     color:white;
     margin-left: 2rem;
     margin-top: 0.5rem;
 }
 
-#submit-btn {
+#submit-btn1 {
     box-sizing: content-box;
     cursor: pointer;
     border: 0.5px solid grey;
@@ -101,9 +107,31 @@ main {
     font-size:1rem;
     padding: 2px 4px 2px 4px;
     transition: ease-in-out 0.2s;
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
-#submit-btn:hover {
+#submit-btn1:hover {
     box-shadow: 1px 1px 5px white;
+}
+
+
+#address-input {
+    /* margin-left:2rem; */
+    width: 20rem;
+    border:none;
+    outline: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    font-size: 1.2rem;
+    padding: 1px 5px;
+    color:white;
+}
+
+#address-id {
+    display: inline-block;
+    font-size:1.27rem;
+    font-weight: bold;
+    color:white;
+    margin-left: 1.55rem;
+    margin-top: 0.5rem;
 }

@@ -127,13 +127,26 @@ app.post('/add-email', function(req, res) {
 
     Contact.findByIdAndUpdate(id, {email: email}, function(err, person) {
         if(err) {
-            console.log("Error in finding the contact");
+            console.log("Error in updating email");
             return;
         }        
         return res.redirect('back');
     });
 });
 
+//add address
+
+app.post('/add-address', function(req, res) {
+    let address = req.body.address;
+    let id = req.query.id;
+    Contact.findByIdAndUpdate(id, {address: address}, function(err, person) {
+        if(err) {
+            console.log("Error in updating address");
+            return;
+        }
+        return res.redirect('back');
+    });
+});
 
 
 
