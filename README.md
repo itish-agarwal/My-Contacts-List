@@ -15,3 +15,5 @@ Make sure the following are installed on your system:
 * Install required node dependencies using `npm install`
 * Fire up the server using `npm start`
 * This will run the server on port 8000. Visit 127.0.0.1:8000 to check out your contacts list
+
+As of now, I am not looking to host it anywhere. You are free to use it as much as you want for any of your projects!
