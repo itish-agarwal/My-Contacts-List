@@ -92,9 +92,11 @@ span {
     box-sizing: content-box;
     cursor: pointer;
     border: 0.3px solid grey;
+    /* padding: 1px 0px; */
     outline:none;
     border-radius: 1px;
     font-size:1rem;
+    padding: 1.6px 4px;
     transition: ease-in-out 0.1s;
 }
 

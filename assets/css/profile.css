@@ -131,7 +131,7 @@ main {
 #address-id {
     display: inline-block;
     overflow-y: auto;
-    width: 30rem;
+    width: 25rem;
     font-size:1.27rem;
     font-weight: bold;
     color:white;
